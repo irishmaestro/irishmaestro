@@ -1,5 +1,4 @@
-![Pay Bitcoin](https://pmt.btcpay.network/api/v1/invoices?storeId=6zg1zwxSaX4LfDvcwbqaTtUyGWAgku3WVSWViBzeBs4z&currency=USD)
-
+[PAY BTC](https://pmt.btcpay.network/api/v1/invoices?storeId=6zg1zwxSaX4LfDvcwbqaTtUyGWAgku3WVSWViBzeBs4z&currency=USD "Pay Bitcoin")
 <!--
 **IrishMaestro/irishmaestro** is a ✨ _special_ ✨ repository because its `README.md` (this file) appears on your GitHub profile.
 

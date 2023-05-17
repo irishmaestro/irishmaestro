@@ -2,4 +2,4 @@
 -------------------------
 
 
-[![hackerone_logo_white](https://user-images.githubusercontent.com/70972101/232349059-b82a5952-96ac-43a4-87f4-06485dea3505.png "h1_profile")](https://hackerone.com/irishmaestro?type=user)
+<!-- [![hackerone_logo_white](https://user-images.githubusercontent.com/70972101/232349059-b82a5952-96ac-43a4-87f4-06485dea3505.png "h1_profile")](https://hackerone.com/irishmaestro?type=user) -->

@@ -17,6 +17,10 @@ jobs:
         with:
           python-version: '3.9'
 
+      - name: Install Dependencies
+        run: |
+          pip install -r scripts/requirements.txt
+          
       - name: hackthebox api request - achievement_graph endpoint
         run: |          
           response=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_TOKEN }}" -s)

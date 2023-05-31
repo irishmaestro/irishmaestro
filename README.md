@@ -4,7 +4,6 @@
 
 
 ![htb_owns_map](https://github.com/IrishMaestro/irishmaestro/assets/70972101/418d154b-818d-4f5e-980f-24d03c1df014)
-<img src="https://github.com/IrishMaestro/irishmaestro/assets/70972101/f9f20c57-11fb-4dcf-8303-81c0593fe99b" alt="activity.log" style="width: 100%;">
 <img src="https://github.com/IrishMaestro/irishmaestro/assets/70972101/055f5226-af44-45bd-a683-ec791207071d" alt="htb_rank" width="450" />
 
 

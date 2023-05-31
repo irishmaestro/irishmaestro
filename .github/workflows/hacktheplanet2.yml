@@ -12,13 +12,17 @@ jobs:
 
     steps:
       - uses: actions/checkout@v3
+      - name: Set up Python
+        uses: actions/setup-python@v2
+        with:
+          python-version: '3.9'
 
       - name: hackthebox api request - achievement_graph endpoint
         run: |          
           response=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_TOKEN }}" -s)
-          echo $response
+          echo "::set-output name=response::$response"
 
       - name: Run a multi-line script
         run: |
           echo hacktheplanet!
-          echo hacktheplanet!hacktheplanet!
+          python scripts/graph_gen.py ${{ steps.api_request.outputs.response }}

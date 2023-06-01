@@ -32,3 +32,12 @@ jobs:
         run: |
           echo hacktheplanet!
           python scripts/graph_gen.py "${{ env.RESPONSE }}"
+          
+      - name: Commit and Push Changes
+        run: |
+          git config --local user.email "action@github.com"
+          git config --local user.name "GitHub Action"
+          git add .
+          git commit -m "pull data -> gen graphs -> update images"
+          git push origin main
+

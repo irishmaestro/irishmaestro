@@ -39,5 +39,5 @@ jobs:
           git config --local user.name "GitHub Action"
           git add .
           git commit -m "pull data -> gen graphs -> update images"
-          git push origin main
+          git push origin master
 

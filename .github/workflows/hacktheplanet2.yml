@@ -25,9 +25,10 @@ jobs:
         run: |          
           response=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_TOKEN }}" -s)
           echo $response
-          echo "RESPONSE=$response" >> $GITHUB_ENV
+          escaped_response=$(echo $response | jq -c '.')
+          echo "RESPONSE=$escaped_response" >> $GITHUB_ENV
           
       - name: exec graph_gen.py script
         run: |
           echo hacktheplanet!
-          python scripts/graph_gen.py ${{ env.RESPONSE }}
+          python scripts/graph_gen.py "${{ env.RESPONSE }}"

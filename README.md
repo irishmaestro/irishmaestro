@@ -2,8 +2,8 @@
   <img src="https://github.com/IrishMaestro/irishmaestro/assets/70972101/9a032a5b-5a92-41e7-aa74-45156e96c902" alt="SVG Image" width="900" height="75">
 </a>
 
+![htb_achievement_graph](./htb_achievement_graph.png)
 
-![htb_owns_map](https://github.com/IrishMaestro/irishmaestro/assets/70972101/418d154b-818d-4f5e-980f-24d03c1df014)
 <img src="https://github.com/IrishMaestro/irishmaestro/assets/70972101/055f5226-af44-45bd-a683-ec791207071d" alt="htb_rank" width="450" />
 
 

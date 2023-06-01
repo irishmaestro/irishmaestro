@@ -16,10 +16,6 @@ jobs:
         uses: actions/setup-python@v2
         with:
           python-version: '3.9'
-      
-      - name: Install jq
-        run: sudo apt-get install -y jq
-
 
       - name: Install Dependencies
         run: |
@@ -29,7 +25,7 @@ jobs:
         run: |          
           response=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_TOKEN }}" -s)
           echo $response
-          escaped_response=$(echo $response | jq -c '.')
+          escaped_response=$(echo "$response" | sed 's/"/\\"/g')
           echo "RESPONSE=$escaped_response" >> $GITHUB_ENV
           
       - name: exec graph_gen.py script

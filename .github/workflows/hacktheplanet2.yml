@@ -33,7 +33,13 @@ jobs:
           echo hacktheplanet!
           python scripts/graph_gen.py "${{ env.RESPONSE }}"
           
+      - name: check_diffs
+        id: check_changes
+        run: |
+          git diff --quiet --exit-code || echo "CHANGES=true" >> $GITHUB_ENV
+          
       - name: Commit and Push Changes
+        if: env.CHANGES == 'true'
         run: |
           git config --local user.email "action@github.com"
           git config --local user.name "GitHub Action"

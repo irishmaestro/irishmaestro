@@ -5,6 +5,7 @@ import matplotlib.pyplot as plt
 import matplotlib.dates as mdates
 import pandas as pd
 import numpy as np
+import sys
 
 json_data = sys.argv[1]
 htb_rank_data = json.loads(json_data)

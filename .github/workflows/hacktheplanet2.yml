@@ -42,7 +42,7 @@ jobs:
           
       - name: exec graph_gen2.py script
         run: |
-          python scripts/graph_gen2.py "${{ env.RESPONSE2 }} "
+          python scripts/graph2_gen.py "${{ env.RESPONSE2 }} "
           
       - name: check_diffs
         id: check_changes

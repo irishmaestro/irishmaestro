@@ -21,7 +21,7 @@ jobs:
         run: |
           pip install -r scripts/requirements.txt
           
-      - name: hackthebox api request - achievement_graph endpoint
+      - name: hackthebox api request - achievement endpoint
         run: |          
           response=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_TOKEN }}" -s)
           echo $response
@@ -32,6 +32,17 @@ jobs:
         run: |
           echo hacktheplanet!
           python scripts/graph_gen.py "${{ env.RESPONSE }}"
+          
+      - name: hackthebox api request - rank endpoint
+        run: |
+          response2=$(curl --location 'https://www.hackthebox.com/api/v4/rankings/user/best?period=1Y&vip=0' -H 'Authorization: Bearer ${{ secrets.HTB_TOKEN }}" -s)
+          echo $response2
+          escaped_response2=$(echo "$response" | sed 's/"/\\"/g')
+          echo "RESPONSE2=$escaped_response" >> $GITHUB_ENV
+          
+      - name: exec graph_gen2.py script
+        run: |
+          python scripts/graph_gen2.py "${{ env.RESPONSE2 }} "
           
       - name: check_diffs
         id: check_changes

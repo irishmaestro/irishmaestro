@@ -37,7 +37,7 @@ jobs:
         run: |
           response2=$(curl --location 'https://www.hackthebox.com/api/v4/rankings/user/best?period=1Y&vip=0' -H "Authorization: Bearer ${{ secrets.HTB_API }}" -s)
           echo $response2
-          escaped_response2=$(echo "$response2" | sed 's/"\\"/g')
+          escaped_response2=$(echo "$response2" | sed 's/"/\\"/g')
           echo "RESPONSE2=$escaped_response2" >> $GITHUB_ENV
           
       - name: exec graph2_gen.py script

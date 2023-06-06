@@ -24,7 +24,7 @@ jobs:
       - name: hackthebox api requests
         run: |          
           response=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_TOKEN }}" -s)
-          response2=$(curl --location 'https://www.hackthebox.com/api/v4/rankings/user/best?period=1Y&vip=0' -H "Authorization: Bearer ${{ secrets.HTB_TOKEN }}" -s)
+          response2=$(curl --location 'https://www.hackthebox.com/api/v4/rankings/user/best?period=1Y&vip=0' -H "Authorization: Bearer ${{ secrets.HTB_API_2 }}" -s)
           echo $response
           echo $response2
           escaped_response1=$(echo "$response" | sed 's/"/\\"/g')

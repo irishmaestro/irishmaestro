@@ -34,7 +34,7 @@ jobs:
       - name: exec graph_gen.py script
         run: |
           echo hacktheplanet!
-          python scripts/graph_gen.py "${{ env.RESPONSE }}"
+          python scripts/graph_gen.py "${{ env.RESPONSE1 }}"
           
       #- name: hackthebox api request - rank endpoint
         #run: |

@@ -28,8 +28,9 @@ jobs:
           echo $response1
           echo $response2
           escaped_response1=$(echo "$response1" | sed 's/"/\\"/g')
+          escaped_response2=$(echo "$response2" | sed 's/"/\\"/g')
           echo "RESPONSE=$escaped_response1" >> $GITHUB_ENV
-          echo "RESPONSE2=$response2" >> $GITHUB_ENV
+          echo "RESPONSE2=$escaped_response2" >> $GITHUB_ENV
           
       - name: exec graph_gen.py script
         run: |

@@ -4,7 +4,7 @@
 
 ![htb_achievement_graph](./htb_achievement_graph.png)
 
-<!-- ![htb_rank_graph](./htb_rank_graph.png) -->
+<img src="./htb_rank_graph.png" width="450" />
 
 <!-- <img src="https://github.com/IrishMaestro/irishmaestro/assets/70972101/055f5226-af44-45bd-a683-ec791207071d" alt="htb_rank" width="450" /> -->
 

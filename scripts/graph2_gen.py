@@ -54,4 +54,3 @@ lowest_rank_text = f"Best Rank: {int(lowest_rank)} @ {lowest_rank_date}"
 ax.text(df['Date'].iloc[-1], 50, lowest_rank_text, color='lime', ha='right', va='bottom', fontsize=8)
 
 plt.savefig('htb_rank_graph.png', dpi=300, bbox_inches='tight', transparent=True)
-plt.savefig('htb_test.png', dpi=300)

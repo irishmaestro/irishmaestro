@@ -23,19 +23,19 @@ jobs:
           
       - name: hackthebox api requests
         run: |          
-          #response1=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_API }}" -s)
+          response1=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_API }}" -s)
           response2=$(curl --location 'https://www.hackthebox.com/api/v4/rankings/user/best?period=1Y&vip=0' -H "Authorization: Bearer ${{ secrets.HTB_API }}" -s)
-          #echo $response1
+          echo $response1
           echo $response2
-          #escaped_response1=$(echo "$response1" | sed 's/"/\\"/g')
+          escaped_response1=$(echo "$response1" | sed 's/"/\\"/g')
           escaped_response2=$(echo "$response2" | sed 's/"/\\"/g')
-          #echo "RESPONSE=$escaped_response1" >> $GITHUB_ENV
+          echo "RESPONSE=$escaped_response1" >> $GITHUB_ENV
           echo "RESPONSE2=$escaped_response2" >> $GITHUB_ENV
           
       - name: exec graph_gen.py script
         run: |
           echo hacktheplanet!
-          #python scripts/graph_gen.py "${{ env.RESPONSE }}"
+          python scripts/graph_gen.py "${{ env.RESPONSE }}"
           python scripts/graph2_gen.py "${{ env.RESPONSE2 }}"
         
           

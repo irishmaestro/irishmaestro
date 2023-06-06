@@ -23,8 +23,8 @@ jobs:
           
       - name: hackthebox api requests
         run: |          
-          response1=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_API_1 }}" -s)
-          response2=$(curl --location 'https://www.hackthebox.com/api/v4/rankings/user/best?period=1Y&vip=0' -H "Authorization: Bearer ${{ secrets.HTB_API_2 }}" -s)
+          response1=$(curl --location 'https://www.hackthebox.com/api/v4/profile/graph/1Y/1190029' -H "Authorization: Bearer ${{ secrets.HTB_API }}" -s)
+          response2=$(curl --location 'https://www.hackthebox.com/api/v4/rankings/user/best?period=1Y&vip=0' -H "Authorization: Bearer ${{ secrets.HTB_API }}" -s)
           echo $response1
           echo $response2
           escaped_response1=$(echo "$response1" | sed 's/"/\\"/g')
@@ -34,9 +34,8 @@ jobs:
       - name: exec graph_gen.py script
         run: |
           echo hacktheplanet!
-          echo ${{ env.RESPONSE }}
-          echo ${{ env.RESPONSE2 }}
           python scripts/graph_gen.py "${{ env.RESPONSE }}"
+          python scripts/graph2_gen.py "${{ env.RESPONSE2 }}"
         
           
       - name: check_diffs

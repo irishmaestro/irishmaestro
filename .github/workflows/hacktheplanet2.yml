@@ -46,7 +46,7 @@ jobs:
           
       - name: debug
         run: |
-          echo ${{ env.CHANGES }}
+          echo env.CHANGES
           
       - name: Commit and Push Changes
         if: env.CHANGES == 'true'

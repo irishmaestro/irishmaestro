@@ -44,6 +44,10 @@ jobs:
         run: |
           git diff --quiet --exit-code || echo "CHANGES=true" >> $GITHUB_ENV
           
+      - name: debug
+        run: |
+          echo ${{ env.CHANGES }}
+          
       - name: Commit and Push Changes
         if: env.CHANGES == 'true'
         run: |

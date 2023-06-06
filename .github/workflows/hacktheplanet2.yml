@@ -35,7 +35,7 @@ jobs:
         
       - name: hackthebox api request2
         run: |
-          response2=$(curl --location 'https://www.hackthebox.com/api/v4/rankingg/user/best?period=1Y&vip=0' -H "Authorization: Bearer ${{ secrets.HTB_API }}" -s)
+          response2=$(curl --location 'https://www.hackthebox.com/api/v4/ranking/user/best?period=1Y&vip=0' -H "Authorization: Bearer ${{ secrets.HTB_API }}" -s)
           echo $response2
           escaped_response2=$(echo "$response2" | sed 's/"\\"/g')
           echo "RESPONSE2=$escaped_response2" >> $GITHUB_ENV

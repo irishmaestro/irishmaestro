@@ -43,8 +43,6 @@ jobs:
       - name: exec graph2_gen.py script
         run: |
           python scripts/graph2_gen.py "${{ env.RESPONSE2 }}"
-          dir
-          sha256sum htb_rank_graph.png
         
           
       - name: check_diffs

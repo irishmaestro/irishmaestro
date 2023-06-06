@@ -50,6 +50,8 @@ jobs:
       - name: check_diffs
         id: check_changes
         run: |
+          echo $?
+          echo debugging image not saving
           git diff --quiet --exit-code || echo "CHANGES=true" >> $GITHUB_ENV
           
       - name: debug

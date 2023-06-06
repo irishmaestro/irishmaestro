@@ -50,9 +50,10 @@ jobs:
       - name: check_diffs
         id: check_changes
         run: |
-          echo $?
-          echo debugging image not saving
-          git diff --quiet --exit-code || echo "CHANGES=true" >> $GITHUB_ENV
+          CHANGES=$(git status --porcelain)
+          if [[ -n "$CHANGES" ]]; then
+            echo "CHANGES=true" >> $GITHUB_ENV
+          fi
           
       - name: debug
         run: |

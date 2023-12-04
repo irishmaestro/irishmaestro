@@ -19,7 +19,7 @@ current_month = current_date.month
 current_day = current_date.day
 
 dates = pd.date_range(end=pd.Timestamp(year=current_year, month=current_month, day=current_day), periods=12, freq='M')
-dates = pd.date_range(end=pd.Timestamp(year=2023, month=9, day=1), periods=12, freq='M')
+dates = pd.date_range(end=pd.Timestamp(year=2023, month=12, day=1), periods=12, freq='M')
 df = pd.DataFrame({'Date': dates, 'Rank': pd.Series(data)})
 df['Rank'].replace(0, np.nan, inplace=True)
 
